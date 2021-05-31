@@ -8,8 +8,8 @@ document.querySelectorAll('.sio-container').forEach(el => {
   const inner = el.querySelector('.sio-inner');
   const items = el.querySelectorAll('.sio-item');
   const count = items.length;
-  const nextBtn = el.querySelector('.next .sio-controls-btn');
-  const prevBtn = el.querySelector('.prev .sio-controls-btn');
+  const btnNext = el.querySelector('.next .sio-controls-btn');
+  const btnPrev = el.querySelector('.prev .sio-controls-btn');
 
   if (count > 3) {
     const setInnerWidth = () =>
@@ -19,6 +19,7 @@ document.querySelectorAll('.sio-container').forEach(el => {
     window.addEventListener('resize', setInnerWidth);
     setInnerWidth();
   }
+
   if (count > 1)
     inner.insertAdjacentElement('afterbegin', items[count - 1].cloneNode(true));
 
@@ -40,11 +41,9 @@ document.querySelectorAll('.sio-container').forEach(el => {
     );
   };
 
-  nextBtn.addEventListener('click', () => {
-    slideStart() || setTimeout(slideEnd, 400, true);
-  });
+  const goNext = () => slideStart() || setTimeout(slideEnd, 400, true);
+  const goPrev = () => slideStart(0) || setTimeout(slideEnd, 400, false);
 
-  prevBtn.addEventListener('click', () => {
-    slideStart(0) || setTimeout(slideEnd, 400, false);
-  });
+  btnNext.addEventListener('click', goNext);
+  btnPrev.addEventListener('click', goPrev);
 });

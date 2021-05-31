@@ -1,199 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>BCE Carousel</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="bce-carousel.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bce-carousel.css" />
+  </head>
+  <body>
+    <h1>More than three items</h1>
+    <div class="bce-component">
+      <div class="bce-controls prev">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="bce-inner">
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="camera-iris.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="account-circle.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="camera-iris.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="account-circle.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              Ut ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bce-controls next">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
 
-    <div class="container-fluid">
-		<div class="row">
-			<div class="col">
+    <h1>Three items</h1>
+    <div class="bce-component">
+      <div class="bce-controls prev">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="bce-inner">
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="camera-iris.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="account-circle.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="account-circle.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              Ut ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bce-controls next">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
 
-				<h1>More than three items</h1>
-				<div class="bce-component">
-					<div class="bce-controls prev">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-							</svg>
-						</div>
-					</div>
-					<div class="bce-inner">
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="camera-iris.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="account-circle.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="camera-iris.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="account-circle.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="bce-controls next">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-							</svg>
-						</div>
-					</div>
-				</div>
-					
-				<h1>Three items</h1>
-				<div class="bce-component">
-					<div class="bce-controls prev">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-							</svg>
-						</div>
-					</div>
-					<div class="bce-inner">
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="camera-iris.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="account-circle.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="account-circle.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="bce-controls next">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-							</svg>
-						</div>
-					</div>
-				</div>
+    <h1>Two items</h1>
+    <div class="bce-component">
+      <div class="bce-controls prev">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="bce-inner">
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="camera-iris.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="account-circle.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bce-controls next">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
 
-				<h1>Two items</h1>
-				<div class="bce-component">
-					<div class="bce-controls prev">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-							</svg>
-						</div>
-					</div>
-					<div class="bce-inner">
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-1.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="camera-iris.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-2.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="account-circle.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="bce-controls next">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-							</svg>
-						</div>
-					</div>
-				</div>
-			
-				<h1>One item</h1>
-				<div class="bce-component">
-					<div class="bce-controls prev">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-							</svg>
-						</div>
-					</div>
-					<div class="bce-inner">
-						<div class="bce-item">	
-							<img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example">
-							<div class="bce-copy">
-								<img class="bce-icon" src="camera-iris.png" alt="bce-icon-example" />
-								<div class="bce-title">
-									View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare ligula libero. Lorem ipsum dolor sit amet.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="bce-controls next">
-						<div class="bce-controls-btn">
-							<svg viewBox="0 0 24 24">
-								<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-							</svg>
-						</div>
-					</div>
-				</div>
-
-
-
-			</div>
-		</div>
-	</div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <h1>One item</h1>
+    <div class="bce-component">
+      <div class="bce-controls prev">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="bce-inner">
+        <div class="bce-item">
+          <img class="bce-item-img" src="photo-3.jpg" alt="bce-photo-example" />
+          <div class="bce-copy">
+            <img
+              class="bce-icon"
+              src="camera-iris.png"
+              alt="bce-icon-example"
+            />
+            <div class="bce-title">
+              View: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              ornare ligula libero. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bce-controls next">
+        <div class="bce-controls-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
 
     <script src="bce-carousel.js"></script>
-</body>
+  </body>
 </html>

@@ -13,10 +13,10 @@
   margin-left: -33.3333%;
   display: flex;
 }
-.bce-inner.two-items {
+.items-2 .bce-inner {
   margin-left: -50%;
 }
-.bce-inner.one-item {
+.items-1 .bce-inner {
   width: 100%;
   margin-left: 0;
 }
@@ -27,10 +27,10 @@
   display: flex;
   flex-direction: column;
 }
-.bce-item.two-items {
+.items-2 .bce-item {
   width: 50%;
 }
-.bce-item.one-item {
+.items-1 .bce-item {
   width: 100%;
 }
 
@@ -83,21 +83,10 @@
 .bce-controls-btn:hover {
   background-color: #343a40;
 }
-.bce-controls svg {
-  height: 50px;
-  width: 50px;
-}
-.bce-controls path {
-  fill: #343a40;
-  transition: fill 0.3s;
-}
-.bce-controls-btn:hover path {
-  fill: #ffffff;
-}
 
-.bce-controls.one-item .bce-controls-btn,
-.bce-controls.two-items .bce-controls-btn,
-.bce-controls.three-items .bce-controls-btn {
+.items-1 .bce-controls .bce-controls-btn,
+.items-2 .bce-controls .bce-controls-btn,
+.items-3 .bce-controls .bce-controls-btn {
   display: none;
 }
 
@@ -110,7 +99,7 @@
   .bce-inner {
     margin-left: -50%;
   }
-  .bce-inner.three-items {
+  .items-3 .bce-inner {
     width: 200%;
   }
 
@@ -122,19 +111,12 @@
   .bce-controls {
     width: 50px;
   }
-  .bce-controls svg {
-    height: 40px;
-    width: 40px;
-  }
 
-  .bce-controls.three-items .bce-controls-btn {
+  .items-3 .bce-controls .bce-controls-btn {
     display: flex;
   }
   .bce-controls-btn:hover {
     background-color: #e4e4e4;
-  }
-  .bce-controls-btn:hover path {
-    fill: #343a40;
   }
 }
 
@@ -147,17 +129,17 @@
   .bce-inner {
     margin-left: -100%;
   }
-  .bce-inner.two-items {
+  .items-2 .bce-inner {
     width: 300%;
     margin-left: -100%;
   }
-  .bce-inner.three-items {
+  .items-3 .bce-inner {
     width: 400%;
   }
 
   .bce-item,
-  .bce-item.two-items,
-  .bce-item.one-item {
+  .items-2 .bce-item,
+  .items-1 .bce-item {
     width: 100%;
     margin: 10px 15px;
   }
@@ -177,12 +159,8 @@
   .bce-controls {
     width: 30px;
   }
-  .bce-controls svg {
-    height: 30px;
-    width: 30px;
-  }
 
-  .bce-controls.two-items .bce-controls-btn {
+  .items-2 .bce-controls .bce-controls-btn {
     display: flex;
   }
 }

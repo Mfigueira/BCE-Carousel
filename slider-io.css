@@ -1,4 +1,4 @@
-.bce-component {
+.sio-container {
   overflow: hidden;
   position: relative;
   top: 0;
@@ -9,55 +9,54 @@
   min-width: 240px;
 }
 
-.bce-inner {
+.sio-inner {
   margin-left: -33.3333%;
   display: flex;
 }
-.items-2 .bce-inner {
+.items-2 .sio-inner {
   margin-left: -50%;
 }
-.items-1 .bce-inner {
+.items-1 .sio-inner {
   width: 100%;
   margin-left: 0;
 }
 
-.bce-item {
+.sio-item {
   width: 33.3333%;
   margin: 20px 30px;
   display: flex;
   flex-direction: column;
 }
-.items-2 .bce-item {
+.items-2 .sio-item {
   width: 50%;
 }
-.items-1 .bce-item {
+.items-1 .sio-item {
   width: 100%;
 }
 
-.bce-item-img {
+.sio-item-img {
   width: 100%;
   flex: none;
 }
 
-.bce-copy {
+.sio-copy {
   display: flex;
-  width: 100%;
   background-color: #778899;
   color: #ffffff;
   padding: 16px;
   flex: 1 1 auto;
 }
-.bce-icon {
+.sio-icon {
   height: 48px;
   width: 48px;
 }
-.bce-title {
+.sio-title {
   font-size: 14px;
   padding-left: 10px;
   flex: 1 1 auto;
 }
 
-.bce-controls {
+.sio-controls {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -68,99 +67,99 @@
   background-color: #e4e4e4;
   top: 0;
 }
-.bce-controls.next {
+.sio-controls.next {
   right: 0;
 }
-.bce-controls.prev {
+.sio-controls.prev {
   left: 0;
 }
-.bce-controls-btn {
+.sio-controls-btn {
   border-radius: 50%;
   background-color: #e4e4e4;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.bce-controls-btn:hover {
+.sio-controls-btn:hover {
   background-color: #343a40;
 }
 
-.items-1 .bce-controls .bce-controls-btn,
-.items-2 .bce-controls .bce-controls-btn,
-.items-3 .bce-controls .bce-controls-btn {
+.items-1 .sio-controls .sio-controls-btn,
+.items-2 .sio-controls .sio-controls-btn,
+.items-3 .sio-controls .sio-controls-btn {
   display: none;
 }
 
 @media only screen and (max-width: 767.98px) {
-  .bce-component {
+  .sio-container {
     padding: 0 25px;
     margin-bottom: 30px;
   }
 
-  .bce-inner {
+  .sio-inner {
     margin-left: -50%;
   }
-  .items-3 .bce-inner {
+  .items-3 .sio-inner {
     width: 200%;
   }
 
-  .bce-item {
+  .sio-item {
     width: 50%;
     margin: 15px 25px;
   }
 
-  .bce-controls {
+  .sio-controls {
     width: 50px;
   }
 
-  .items-3 .bce-controls .bce-controls-btn {
+  .items-3 .sio-controls .sio-controls-btn {
     display: flex;
   }
-  .bce-controls-btn:hover {
+  .sio-controls-btn:hover {
     background-color: #e4e4e4;
   }
 }
 
 @media only screen and (max-width: 424.98px) {
-  .bce-component {
+  .sio-container {
     padding: 0 15px;
     margin-bottom: 20px;
   }
 
-  .bce-inner {
+  .sio-inner {
     margin-left: -100%;
   }
-  .items-2 .bce-inner {
+  .items-2 .sio-inner {
     width: 300%;
     margin-left: -100%;
   }
-  .items-3 .bce-inner {
+  .items-3 .sio-inner {
     width: 400%;
   }
 
-  .bce-item,
-  .items-2 .bce-item,
-  .items-1 .bce-item {
+  .sio-item,
+  .items-2 .sio-item,
+  .items-1 .sio-item {
     width: 100%;
     margin: 10px 15px;
   }
 
-  .bce-copy {
+  .sio-copy {
     padding: 10px;
   }
-  .bce-icon {
+  .sio-icon {
     height: 40px;
     width: 40px;
   }
-  .bce-title {
+  .sio-title {
     font-size: 12px;
     padding-left: 6px;
   }
 
-  .bce-controls {
+  .sio-controls {
     width: 30px;
   }
 
-  .items-2 .bce-controls .bce-controls-btn {
+  .items-2 .sio-controls .sio-controls-btn {
     display: flex;
   }
 }

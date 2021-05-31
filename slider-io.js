@@ -1,18 +1,15 @@
-const BREAKPOINT_LARGE = 768;
-const BREAKPOINT_SMALL = 425;
+const BREAKPOINT_SMALL = `(max-width:${425}px)`;
+const BREAKPOINT_LARGE = `(min-width:${768}px)`;
 
-const smallScreen = () =>
-  window.matchMedia(`(max-width:${BREAKPOINT_SMALL}px)`).matches;
+const smallScreen = () => window.matchMedia(BREAKPOINT_SMALL).matches;
+const largeScreen = () => window.matchMedia(BREAKPOINT_LARGE).matches;
 
-const largeScreen = () =>
-  window.matchMedia(`(min-width:${BREAKPOINT_LARGE}px)`).matches;
-
-document.querySelectorAll('.bce-component').forEach(el => {
-  const inner = el.querySelector('.bce-inner');
-  const items = el.querySelectorAll('.bce-item');
+document.querySelectorAll('.sio-container').forEach(el => {
+  const inner = el.querySelector('.sio-inner');
+  const items = el.querySelectorAll('.sio-item');
   const count = items.length;
-  const nextBtn = el.querySelector('.next .bce-controls-btn');
-  const prevBtn = el.querySelector('.prev .bce-controls-btn');
+  const nextBtn = el.querySelector('.next .sio-controls-btn');
+  const prevBtn = el.querySelector('.prev .sio-controls-btn');
 
   if (count > 3) {
     const setInnerWidth = () =>
@@ -29,11 +26,12 @@ document.querySelectorAll('.bce-component').forEach(el => {
 
   const slideStart = ml => {
     inner.style.transition = 'margin 400ms';
-    inner.style.marginLeft = ml;
+    inner.style.marginLeft =
+      ml ?? `-${smallScreen() ? 200 : largeScreen() ? 66.6667 : 100}%`;
   };
 
   const slideEnd = next => {
-    const items = el.querySelectorAll('.bce-item');
+    const items = el.querySelectorAll('.sio-item');
     inner.style.transition = inner.style.marginLeft = '';
     items[next ? 0 : items.length - 1].remove();
     inner.insertAdjacentElement(
@@ -42,11 +40,11 @@ document.querySelectorAll('.bce-component').forEach(el => {
     );
   };
 
-  const goNext = ml => slideStart(ml) || setTimeout(slideEnd, 400, true);
-  const goPrev = () => slideStart(0) || setTimeout(slideEnd, 400, false);
+  nextBtn.addEventListener('click', () => {
+    slideStart() || setTimeout(slideEnd, 400, true);
+  });
 
-  nextBtn.addEventListener('click', () =>
-    goNext(`-${smallScreen() ? 200 : largeScreen() ? 66.6667 : 100}%`)
-  );
-  prevBtn.addEventListener('click', goPrev);
+  prevBtn.addEventListener('click', () => {
+    slideStart(0) || setTimeout(slideEnd, 400, false);
+  });
 });

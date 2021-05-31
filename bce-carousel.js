@@ -2,81 +2,26 @@ const CLASS_ONE_ITEM = "one-item";
 const CLASS_TWO_ITEMS = "two-items";
 const CLASS_THREE_ITEMS = "three-items";
 const DATA_ID = "data-bceid";
-const BREAKPOINT_LARGE = 1200;
-const BREAKPOINT_SMALL = 768;
+const BREAKPOINT_LARGE = 768;
+const BREAKPOINT_SMALL = 425;
 
-const isMobile = () => {
-  const m = window.matchMedia("(min-width:" + BREAKPOINT_SMALL + "px)");
-  return !m.matches ? true : false;
-};
+const isMobile = () =>
+  window.matchMedia("(max-width:" + BREAKPOINT_SMALL + "px)").matches;
 
-const isLargeSize = () => {
-  const m = window.matchMedia("(min-width:" + BREAKPOINT_LARGE + "px)");
-  return m.matches ? true : false;
-};
+const isLargeSize = () =>
+  window.matchMedia("(min-width:" + BREAKPOINT_LARGE + "px)").matches;
 
-const setInnerWidth = (a, b) => {
-  if (isMobile()) {
-    a.style.width = (b + 1) * 100 + "%";
-  } else if (isLargeSize()) {
-    a.style.width = (b + 1) * 33.3333 + "%";
-  } else {
-    a.style.width = (b + 1) * 50 + "%";
-  }
-  return;
-};
-
-const goNext = (n, data, i) => {
-  document
-    .querySelector(`.bce-inner[${data}="${i}"]`)
-    .animate({ marginLeft: n }, 500, function () {
-      document
-        .querySelector(`.bce-inner[${data}="${i}"] .bce-item:first-child`)
-        .remove();
-      document
-        .querySelector(`.bce-inner[${data}="${i}"] .bce-item:first-child`)
-        .clone()
-        .insertAfter(`.bce-inner[${data}="${i}"] .bce-item:last-child`);
-      document
-        .querySelector(`.bce-inner[${data}="${i}"]`)
-        .css("margin-left", "");
-    });
-};
-
-const goPrev = (data, i) => {
-  document
-    .querySelector(`.bce-inner[${data}="${i}"]`)
-    .animate({ marginLeft: 0 }, 500, function () {
-      document
-        .querySelector(`.bce-inner[${data}="${i}"] .bce-item:last-child`)
-        .remove();
-      document
-        .querySelector(`.bce-inner[${data}="${i}"] .bce-item:last-child`)
-        .clone()
-        .insertBefore(`.bce-inner[${data}="${i}"] .bce-item:first-child`);
-      document
-        .querySelector(`.bce-inner[${data}="${i}"]`)
-        .css("margin-left", "");
-    });
-};
-
-document.querySelectorAll(".bce-component").forEach((el, i) => {
+document.querySelectorAll(".bce-component").forEach((el) => {
   const inner = el.querySelector(".bce-inner");
   const items = el.querySelectorAll(".bce-item");
   const controls = el.querySelectorAll(".bce-controls");
-
-  el.dataset.bceid = i;
-  inner.dataset.bceid = i;
-  controls.forEach((c) => (c.dataset.bceid = i));
 
   const nextBtn = el.querySelector(".bce-controls.next .bce-controls-btn");
   const prevBtn = el.querySelector(".bce-controls.prev .bce-controls-btn");
 
   cloneItem = () => {
-    const lastItem = inner.querySelector(".bce-item:last-child");
-    inner
-      .querySelector(".bce-item:first-child")
-      .insertAdjacentElement("beforebegin", lastItem);
+    const lastItemClone = items[items.length - 1].cloneNode(true);
+    inner.insertAdjacentElement("afterbegin", lastItemClone);
   };
 
   if (items.length === 1) {
@@ -94,22 +39,43 @@ document.querySelectorAll(".bce-component").forEach((el, i) => {
     controls.forEach((c) => c.classList.add(CLASS_THREE_ITEMS));
     cloneItem();
   } else {
-    window.onresize = () => {
-      setInnerWidth(inner, items.length);
-    };
-    setInnerWidth(inner, items.length);
+    const setInnerWidth = (itemsCount) =>
+      (inner.style.width = `${
+        ++itemsCount * (isMobile() ? 100 : isLargeSize() ? 33.3333 : 50)
+      }%`);
+    window.addEventListener("resize", () => setInnerWidth(items.length));
+    setInnerWidth(items.length);
     cloneItem();
   }
 
+  const slideStart = (ml) => {
+    inner.style.transition = "margin 400ms";
+    inner.style.marginLeft = ml;
+  };
+
+  const slideEnd = (next) => {
+    const items = el.querySelectorAll(".bce-item");
+    inner.style.transition = inner.style.marginLeft = "";
+    items[next ? 0 : items.length - 1].remove();
+    inner.insertAdjacentElement(
+      next ? "beforeend" : "afterbegin",
+      items[next ? 1 : items.length - 2].cloneNode(true)
+    );
+  };
+
+  const goNext = (ml) => slideStart(ml) || setTimeout(slideEnd, 400, true);
+
+  const goPrev = () => slideStart(0) || setTimeout(slideEnd, 400, false);
+
   nextBtn.addEventListener("click", (e) => {
     if (!e.target.closest(".bce-controls").style.visibility) {
-      if (isMobile()) goNext("-200%", DATA_ID, i);
-      else if (isLargeSize()) goNext("-66.6667%", DATA_ID, i);
-      else goNext("-100%", DATA_ID, i);
+      if (isMobile()) goNext("-200%");
+      else if (isLargeSize()) goNext("-66.6667%");
+      else goNext("-100%");
     }
   });
 
   prevBtn.addEventListener("click", (e) => {
-    if (!e.target.closest(".bce-controls").style.visibility) goPrev(DATA_ID, i);
+    if (!e.target.closest(".bce-controls").style.visibility) goPrev();
   });
 });

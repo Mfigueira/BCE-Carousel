@@ -20,8 +20,7 @@ document.querySelectorAll('.sio-container').forEach(el => {
     setInnerWidth();
   }
 
-  if (count > 1)
-    inner.insertAdjacentElement('afterbegin', items[count - 1].cloneNode(true));
+  if (count > 1) inner.prepend(items[count - 1].cloneNode(true));
 
   el.classList.add(`items-${count}`);
 

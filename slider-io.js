@@ -8,8 +8,8 @@ document.querySelectorAll('.sio-container').forEach(el => {
   const inner = el.querySelector('.sio-inner');
   const items = el.querySelectorAll('.sio-item');
   const count = items.length;
-  const btnNext = el.querySelector('.next .sio-controls-btn');
-  const btnPrev = el.querySelector('.prev .sio-controls-btn');
+  const btnNext = el.querySelector('.next button');
+  const btnPrev = el.querySelector('.prev button');
 
   if (count > 3) {
     const setInnerWidth = () =>

@@ -46,4 +46,9 @@ document.querySelectorAll('.sio-container').forEach(el => {
 
   btnNext.addEventListener('click', goNext);
   btnPrev.addEventListener('click', goPrev);
+
+  el.addEventListener('keydown', e => {
+    e.key === 'ArrowLeft' && goPrev();
+    e.key === 'ArrowRight' && goNext();
+  });
 });
